@@ -4,22 +4,25 @@
     <title>AaMusicApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://fonts.googleapis.com/css?family=Akronim" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <header>
   <h1>Music App</h1>
-  <% if logged_in? %>
-    <%= current_user['email'] %> is logged in.
-    <%= button_to("Logout", session_url, method: :delete) %>
-  <% else %>
-    <%= button_to("Login", new_session_url, method: :get) %> <p> OR </p>
-    <%= button_to("Sign Up", new_user_url, method: :get) %>
-  <% end %>
+    <div>
+      <% if logged_in? %>
+        <p><%= current_user['email'] %> is logged in.</p>
+        <%= button_to("Logout", session_url, method: :delete) %>
+      <% else %>
+        <%= button_to("Login", new_session_url, method: :get) %> <p> OR </p>
+        <%= button_to("Sign Up", new_user_url, method: :get) %>
+      <% end %>
+    </div>
   </header>
   <body>
-
-    <%= yield %>
+    <section class='main_content'>
+      <%= yield %>
+    </section>
   </body>
 </html>
