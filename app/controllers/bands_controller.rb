@@ -7,7 +7,7 @@ class BandsController < ApplicationController
   def show
     @band = Band.find(params[:id])
     if @band
-      redirect_to band_url(@band)
+      render :show
     else
       flash[:errors] = "Cannot find that band"
       redirect_to cats_url

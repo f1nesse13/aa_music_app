@@ -14,7 +14,7 @@
  *= require_self
  */
  html {
-   background: linear-gradient(crimson 40%, #000);
+   background: linear-gradient(crimson 45%, #000 105%);
    font: 300 16px 'Lato', sans-serif;
    list-style: none;
    min-height: 100%;
