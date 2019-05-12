@@ -10,6 +10,11 @@
   </head>
   <header>
   <h1>Music App</h1>
+  <div class="error_box">
+    <% if !flash[:errors].nil? || !flash.now[:errors].nil? %>
+      <%= render 'shared/errors' %>
+    <% end %>
+  </div>
     <div>
       <% if logged_in? %>
         <p><%= current_user['email'] %> is logged in.</p>

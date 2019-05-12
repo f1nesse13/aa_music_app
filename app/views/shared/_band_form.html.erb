@@ -1,0 +1,11 @@
+<% action_url = action == :edit ? band_url(band) : bands_url %>
+<% submit_text = action == :edit ? "Edit Band" : "Create Band"%>
+
+<form action="<%= action_url %>" method="POST">
+<% if action == :edit %>
+  <input type="hidden" name="_method" value="PATCH">
+<% end %>
+<%= auth_token %>
+  <input type="text" name="band[name]" value="<%= band.name %>" placeholder="Band Name">
+  <input type="submit" value="<%= submit_text %>">
+</form>
