@@ -16,13 +16,18 @@
     <% end %>
   </div>
     <div>
-      <% if logged_in? %>
-        <p><%= current_user['email'] %> is logged in.</p>
-        <%= button_to("Logout", session_url, method: :delete) %>
-      <% else %>
-        <%= button_to("Login", new_session_url, method: :get) %> <p> OR </p>
-        <%= button_to("Sign Up", new_user_url, method: :get) %>
-      <% end %>
+      <div>
+        <%= button_to("Back to Band Page", bands_url, method: :get) %>
+      </div>
+      <div>
+        <% if logged_in? %>
+          <p><%= current_user['email'] %> is logged in.</p>
+          <%= button_to("Logout", session_url, method: :delete) %>
+        <% else %>
+          <%= button_to("Login", new_session_url, method: :get) %> <p> OR </p>
+          <%= button_to("Sign Up", new_user_url, method: :get) %>
+        <% end %>
+      </div>
     </div>
   </header>
   <body>

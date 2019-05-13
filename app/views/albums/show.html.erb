@@ -1,0 +1,5 @@
+<h1><%= @album.title %></h1>
+
+<%= button_to("Go to Band Page", band_url(@album.band), method: :get) %>
+<%= button_to("Edit Album", edit_album_url(@album), method: :post) %>
+<%= button_to("Delete Album", album_url(@album), method: :delete) %>

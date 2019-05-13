@@ -3,7 +3,10 @@
 <h1>Albums</h1>
 
 <ul>
-  <li>Albums go here</li>
-  <li>Albums go here</li>
-  <li>Albums go here</li>
+<% @albums.each do |album| %>
+  <li><p><%= album.title %></p>
+  <%= link_to("Go to Page", album_url(album)) %></li>
+<% end %>
 </ul>
+
+<%= button_to("Add new Album", new_band_album_url(@band), method: :get) %>

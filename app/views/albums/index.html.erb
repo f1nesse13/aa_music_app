@@ -1,0 +1,18 @@
+<h1>Album List:</h1>
+
+<table>
+  <th>Title</th>
+  <th>Year</th>
+  <th>Band</th>
+  <th>Type</th>
+  <% @albums.each do |album| %>
+  <tr>
+    <td><%= album.title %></td>
+    <td><%= album.year %></td>
+    <td><%= album.band.name %></td>
+    <td><%= album.studio? %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= button_to("Add a New Band", new_band_url, method: :get) %>

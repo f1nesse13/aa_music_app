@@ -6,6 +6,7 @@ class BandsController < ApplicationController
 
   def show
     @band = Band.find(params[:id])
+    @albums = Album.where(band_id: params[:id])
     if @band
       render :show
     else
