@@ -6,6 +6,7 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.find(params[:id])
+    @album_attributes = @album.attributes_for_show_page
     if @album
       render :show
     else
@@ -17,7 +18,7 @@ class AlbumsController < ApplicationController
   def new
     @album = Album.new
     @bands = Band.all
-    @band_id = params[:id]
+    @band_id = params[:band_id]
     render :new
   end
 

@@ -1,0 +1,17 @@
+<h1>All Tracks</h1>
+
+<table>
+  <th>Album</th>
+  <th>Title</th>
+  <th>Track Number</th>
+  <th>Lyrics</th>
+  
+  <% @tracks.includes(:album).each do |track| %>
+    <tr>
+      <td><%= track.album.title %></td>
+      <td><%= track.title %></td>
+      <td><%= track.ord %> <%= '(Bonus)' if track.bonus == true %></td>
+      <td><%= track.lyrics %></td>
+    </tr>
+  <% end %>
+</table>

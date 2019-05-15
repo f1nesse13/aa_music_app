@@ -11,7 +11,7 @@
   <select type="text" name="album[band_id]" value="<%= album.band_id %>" placeholder="Band Name">
   <option disabled>-- Select a Band --</option>
     <% bands.each do |band| %>
-      <option value="<%= band.id %>" <%= 'selected' if @band_id == album.band_id %>><%= band.name %></option>
+      <option value="<%= band.id %>" <%= 'selected' if band.id == band_id.to_i %>><%= band.name %></option>
     <% end %>
   </select>
   

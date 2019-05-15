@@ -12,4 +12,8 @@ class Album < ApplicationRecord
   def studio?
     self.studio == true ? "Studio" : "Live"
   end
+
+  def attributes_for_show_page
+    [self.band.name, self.title, self.year]
+  end
 end
