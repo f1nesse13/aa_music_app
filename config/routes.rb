@@ -9,4 +9,6 @@ Rails.application.routes.draw do
     resources :tracks, only: :new
   end
   resources :tracks, except: :new
+
+  root "bands#index"
 end
