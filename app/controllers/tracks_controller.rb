@@ -1,4 +1,6 @@
 class TracksController < ApplicationController
+  before_action :current_user_or_redirect
+
   def index
     @tracks = Track.all
     render :index
@@ -45,6 +47,8 @@ class TracksController < ApplicationController
 
   def update
     @track = Track.find(params[:id])
+    @album_id = params[:album_id]
+    @albums = Album.all
 
     if @track.update(track_params)
       flash[:notice] = "Successfully updated"
@@ -60,7 +64,7 @@ class TracksController < ApplicationController
 
     if @track.destroy
       flash[:notice] = "Successfully deleted"
-      redirect_to tracks_url
+      redirect_to album_url(@track.album)
     else
       flash[:error] = "Cannot delete"
       redirect_back

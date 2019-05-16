@@ -14,6 +14,6 @@ class Album < ApplicationRecord
   end
 
   def attributes_for_show_page
-    [self.band.name, self.title, self.year]
+    [self.band.name, self.title, self.year, self.tracks.length]
   end
 end

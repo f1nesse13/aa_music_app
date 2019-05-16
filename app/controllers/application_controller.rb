@@ -14,4 +14,11 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !current_user.nil?
   end
+
+  def current_user_or_redirect
+    if current_user.nil?
+      flash[:errors] = "You must be logged in to access that page"
+      redirect_to new_session_url
+    end
+  end
 end

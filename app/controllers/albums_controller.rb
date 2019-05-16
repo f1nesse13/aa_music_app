@@ -1,4 +1,6 @@
 class AlbumsController < ApplicationController
+  before_action :current_user_or_redirect
+
   def index
     @albums = Album.all
     render :index

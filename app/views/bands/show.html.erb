@@ -4,8 +4,8 @@
 
 <ul>
 <% @albums.each do |album| %>
-  <li><p><%= album.title %></p>
-  <%= link_to("Go to Page", album_url(album)) %></li>
+  <li>
+  <%= link_to(album.title, album_url(album)) %></li>
 <% end %>
 </ul>
 

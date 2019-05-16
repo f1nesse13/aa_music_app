@@ -1,21 +1,24 @@
 <h1><%= @album.title %></h1>
-
+<h2>Album Information</h2>
 <table>
   <th>Band</th>
   <th>Title</th>
   <th>Year</th>
+  <th>No. of Tracks</th>
   <tr>
     <% @album_attributes.each do |attr_val| %>
-    
-      <td><%= attr_val %></td>
-    <% end %>
-    <% @album.tracks.each do |track| %>
-      <tr>
-        <td><%= link_to(track.title, track_url(track)) %></td>
-      </tr>
+      <td><p><%= attr_val %></p></td>
     <% end %>
   </tr>
 </table>
+<h2>Track list</h2>
+<ul>
+  <% @album.tracks.each do |track| %>
+      <li>
+        <%= link_to(track.title, track_url(track)) %>
+      </li>
+    <% end %>
+</ul>
 
 <%= button_to("Add Track", new_album_track_url(@album), method: :get) %>
 <%= button_to("Go to Band Page", band_url(@album.band), method: :get) %>

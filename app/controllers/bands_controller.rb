@@ -1,4 +1,6 @@
 class BandsController < ApplicationController
+  before_action :current_user_or_redirect
+
   def index
     @bands = Band.all
     render :index
