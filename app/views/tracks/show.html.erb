@@ -1,5 +1,19 @@
 <h1><%= @track.title %></h1>
 
+<table class="track_page_table">
+  <th>Album</th>
+  <th>Title</th>
+  <th>Track Number</th>
+  <tr>
+    <td> <p><%= @track.album.title %></p></td>
+    <td><p><%= @track.title %></p></td>
+    <td><p><%= @track.ord %><%= " - (Bonus Track)" if @track.bonus == true %></p></td>
+  </tr>
+</table>
+  <div class="track_lyrics">
+    <h2>Lyrics</h2>
+    <p><%= @track.lyrics %></p>
+  </div> 
 <%= button_to("Go to Band Page", band_url(@track.band), method: :get) %>
 <%= button_to("Go to Album Page", album_url(@track.album), method: :get) %>
 <%= button_to("Edit Track", edit_track_url(@track), method: :get) %>

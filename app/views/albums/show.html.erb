@@ -1,6 +1,6 @@
 <h1><%= @album.title %></h1>
 <h2>Album Information</h2>
-<table>
+<table class="album_page_table">
   <th>Band</th>
   <th>Title</th>
   <th>Year</th>
@@ -14,9 +14,7 @@
 <h2>Track list</h2>
 <ul>
   <% @album.tracks.each do |track| %>
-      <li>
-        <%= link_to(track.title, track_url(track)) %>
-      </li>
+      <li><%= link_to(track.title, track_url(track)) %></li>
     <% end %>
 </ul>
 
