@@ -1,0 +1,10 @@
+<% action_url = method == :edit ? track_note_url(@track, @note) : track_notes_url(@track, @note) %>
+<% submit_text = method == :edit ? 'Edit Note' : 'Create Note' %>
+<form class="note_form" action="<%= action_url %>" method="post">
+  <%= auth_token %>
+  <% if method == :edit %>
+    <input type="hidden" name="_method" value="patch">
+  <% end %>
+  <textarea name="note[body]" id="body_field"><%= note.body %></textarea>
+  <input type="submit" value="<%= submit_text %>">
+</form>

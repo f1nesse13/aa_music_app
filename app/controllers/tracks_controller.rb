@@ -8,7 +8,8 @@ class TracksController < ApplicationController
 
   def show
     @track = Track.find(params[:id])
-
+    @notes = Note.all
+    @note = Note.new()
     if @track
       render :show
     else

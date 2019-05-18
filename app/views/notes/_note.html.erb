@@ -1,0 +1,14 @@
+<div class="note_list">
+  <% notes.includes(:track).each do |note| %>
+    <div class="note">
+      <p>User: <%= note.user.email %></p>
+      <p><%= note.body %></p>
+      <% if current_user.id == note.user_id %>
+        <div class="note_links">
+          <%= link_to("Edit", edit_track_note_url(note.track, note), method: :get) %>  
+          <%= link_to("Delete", track_note_url(note.track, note), method: :delete) %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

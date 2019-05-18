@@ -13,7 +13,12 @@
   <div class="track_lyrics">
     <h2>Lyrics</h2>
     <p><%= @track.lyrics %></p>
-  </div> 
+  </div>
+
+<h2>Track Notes</h2>
+<%= render 'notes/note', notes: @notes %>
+<h2>Add Note:</h2>
+<%= render 'notes/form', note: @note, track: @track, method: :new %>
 <%= button_to("Go to Band Page", band_url(@track.band), method: :get) %>
 <%= button_to("Go to Album Page", album_url(@track.album), method: :get) %>
 <%= button_to("Edit Track", edit_track_url(@track), method: :get) %>
