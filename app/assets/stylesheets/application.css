@@ -25,6 +25,21 @@
    outline: none;
  }
 
+ ul {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+
+ ul h2 {
+  margin-top: 3rem;
+ }
+
+ ul p {
+   margin-top: 0;
+   margin-bottom: 6rem;
+ }
+
 table {
    text-align: center;
    border-spacing: 2.3rem;
@@ -98,6 +113,30 @@ header div {
 header p {
   font-size: 1.3rem;
   font-weight: 400;
+}
+
+.track_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.track_form div {
+  display: flex;
+  margin: 3rem 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.track_form div label {
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+select {
+  margin-top: 3rem;
+  padding: .8rem 1rem;
+  border: 2px solid #000;
+  font: 300 1.2rem 'Lato';
 }
 
 input {
@@ -181,10 +220,15 @@ input:active {
   margin-bottom: 5rem;
 }
 
-.note_form textarea {
+textarea {
   width: 25rem;
   height: 12rem;
   font-size: 1.2rem;
   border: 2px solid #000;
   box-shadow: 3px 4px 0 rgba(0,0,0,0.5);
+}
+
+.page_links {
+  display: flex;
+  margin-top: 4rem;
 }
