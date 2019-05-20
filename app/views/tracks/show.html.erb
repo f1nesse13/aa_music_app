@@ -1,5 +1,4 @@
 <h1><%= @track.title %></h1>
-
 <table class="track_page_table">
   <th>Album</th>
   <th>Title</th>
@@ -12,14 +11,13 @@
 </table>
   <div class="track_lyrics">
     <h2>Lyrics</h2>
-    <p><%= @track.lyrics %></p>
+    <p><%= ugly_lyrics(@track.lyrics) %></p>
   </div>
 
 <h2>Track Notes</h2>
 <%= render 'notes/note', notes: @notes %>
 <h2>Add Note:</h2>
 <%= render 'notes/form', note: @note, track: @track, method: :new %>
-
 <div class="page_links">
   <%= button_to("Edit Track", edit_track_url(@track), method: :get) %>
   <%= button_to("Delete Track", track_url(@track), method: :delete) %>
